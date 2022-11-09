@@ -1,0 +1,37 @@
+<template>
+    <!--Loading Spinner-->
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading...."   variant="brand"></lightning-spinner>
+    </template>
+    <div class="slds-tabs_card">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span>Send Custom Messages to Customers</span>
+                                        <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Customers (Accounts)</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br/>
+    <lightning-card title="Send SMS to Customers" icon-name="standard:sms">
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input type="text" label="Enter Your Message" value={getMessagefromCMP} onchange={handleMessage} required></lightning-input>
+        </div><br/>
+        <lightning-button-group>
+            <lightning-button label="Send Message" onclick={handlesuccess}></lightning-button>
+            <lightning-button label="Cancel" onclick={handlerefresh}></lightning-button>
+        </lightning-button-group>
+            
+        
+    </lightning-card>
+</template>
